@@ -24,13 +24,13 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npm audit --omit=dev --audit-level=high
-      - if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+      - if: vars.DEPLOY_PAGES == 'true' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: vars.DEPLOY_PAGES == 'true' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: check
     runs-on: ubuntu-latest
     timeout-minutes: 10

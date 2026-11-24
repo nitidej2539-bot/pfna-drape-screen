@@ -33,3 +33,13 @@ React + Three.js + GSAP, build ด้วย Vite
 - `three/` ห้อง 3D (โหลดแยกจากหน้าแรก)
 - `flat/` เวอร์ชันสำรอง 2.5D (`2d.html`)
 - `demo.js` + `tools/demoCode.js` โหมดสาธิต
+
+## CI/CD
+
+`.github/workflows/ci-cd.yml` ตรวจ lint + test + build + audit ทุกครั้งที่ push เข้า `main` หรือเปิด pull request
+
+เปิดการเผยแพร่ขึ้น GitHub Pages (repo ต้องเป็น public หรือใช้แพ็กเกจแบบเสียเงิน):
+
+1. Settings → Pages → Source = **GitHub Actions**
+2. Settings → Secrets and variables → Actions → Variables → เพิ่ม `DEPLOY_PAGES` = `true`
+3. Actions → CI/CD → Run workflow
