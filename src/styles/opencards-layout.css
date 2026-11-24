@@ -1,0 +1,25 @@
+/* มือถือ: ป้ายซ้าย/ขวาเปิดเข้าหากลางจอ ไม่ให้ตกขอบ */
+@media (max-width: 600px) {
+  .h3d.is-traction .h3d-card {
+    left: -14px;
+    bottom: auto;
+    top: 16px;
+    translate: none;
+  }
+  .h3d.is-head .h3d-card {
+    left: auto;
+    right: -14px;
+    translate: none;
+  }
+}
+@media (max-width: 900px), (orientation: portrait) {
+  .mat-thumbs button {
+    aspect-ratio: auto;
+    height: 104px;
+  }
+  .mat-thumbs img {
+    object-fit: contain;
+  }
+}
+
+/* แท็กใหญ่ซ้าย–ขวาระหว่างทางเดิน */

@@ -1,0 +1,161 @@
+/* แถบเปรียบเทียบ 3 รุ่นใน dashboard */
+.tone-red {
+  --tone: #e05a52;
+}
+
+.tone-amber {
+  --tone: #e0952a;
+}
+
+.tone-cyan {
+  --tone: var(--cyan);
+}
+
+.ver-bars {
+  display: grid;
+  gap: 10px;
+  margin: 6px 0 4px;
+}
+
+.ver-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 74px;
+  align-items: center;
+  gap: 12px;
+}
+
+.ver-name {
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.ver-row .dash-fill {
+  background: var(--tone);
+  box-shadow: 0 0 10px var(--tone);
+}
+
+.ver-val {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--tone);
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-wide .glass-btn {
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+/* การ์ดรุ่นในหน้าผลการใช้งาน */
+.ver-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ver-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--tone) 40%, transparent);
+  background: var(--surface);
+}
+
+.ver-photo {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #fff;
+  cursor: zoom-in;
+}
+
+.ver-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.ver-photo:hover img {
+  transform: scale(1.05);
+}
+
+.ver-zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(18, 49, 58, 0.72);
+  font-size: 12px;
+}
+
+.ver-body {
+  padding: 20px 22px 24px;
+}
+
+.ver-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tone) 18%, transparent);
+  color: var(--tone);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ver-body h3 {
+  margin: 10px 0 14px;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.ver-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ver-metrics > div {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+
+.ver-num {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--tone);
+  font-variant-numeric: tabular-nums;
+}
+
+.ver-cap {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ver-body h4 {
+  margin: 12px 0 6px;
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.ver-body ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-2);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+}

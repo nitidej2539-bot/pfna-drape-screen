@@ -1,0 +1,21 @@
+node_modules/
+dist/
+*.local
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+backup-removed/
+backup-before-refactor-*/
+*.mp4
+
+# ไฟล์ทำงาน/ต้นฉบับ ไม่ใช้ในการ build
+.agents/
+.claude/
+skills-lock.json
+seedance/
+flow-pack/
+higgsfield-pack/
+blender/preview/
+/*.png
+FLOW-PROMPTS.md

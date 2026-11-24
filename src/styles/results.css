@@ -1,0 +1,110 @@
+/* Dashboard ผลการใช้งาน */
+.ov-results {
+  left: 50%;
+  top: 50%;
+  translate: -50% -46%;
+  width: min(880px, 92vw);
+  max-height: calc(100svh - 110px);
+  overflow: auto;
+  padding: 28px;
+  border: 1px solid var(--cyan-soft);
+  border-radius: 20px;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 60px rgba(29, 154, 124, 0.18);
+}
+
+.ov-results h2 {
+  margin: 0 0 20px;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 500;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.dash-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(29, 154, 124, 0.18);
+  background: rgba(29, 154, 124, 0.05);
+}
+
+.dash-kpi,
+.dash-wide {
+  grid-column: span 2;
+}
+
+.dash-label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.dash-value {
+  font-size: clamp(32px, 3.4vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-value small {
+  font-size: 0.4em;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.dash-bar {
+  position: relative;
+  height: 8px;
+  border-radius: 8px;
+  background: rgba(18, 49, 58, 0.08);
+}
+
+.dash-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 8px;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  transition: width 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.dash-target {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.dash-badge {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  background: rgba(18, 49, 58, 0.06);
+  color: var(--muted);
+}
+
+.dash-badge.is-pass {
+  background: var(--mint-bg);
+  color: var(--accent-strong);
+}
+
+.dash-wide ul {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.app3d .progress {
+  z-index: 6;
+}

@@ -1,0 +1,38 @@
+/* ================= เว็บไซต์ผลิตภัณฑ์ (3D) ================= */
+/* overflow: hidden ทำให้ position: sticky ไม่ทำงาน — ใช้ clip แทน */
+html,
+body {
+  overflow-x: clip;
+}
+
+/* ===== ธีม "Clinical Clean" — ขาว-เขียวอ่อน เข้ากับห้องผ่าตัด =====
+   แก้สีทั้งเว็บได้ที่ตรงนี้ที่เดียว */
+:root {
+  --bg: #f3f7f6; /* พื้นหลังหน้าเว็บ (ขาวอมเขียว) */
+  --surface: #ffffff; /* การ์ด / แผง */
+  --surface-2: #f6faf8;
+  --ink: #12313a; /* ตัวอักษรหลัก */
+  --ink-2: #557077; /* ตัวอักษรรอง */
+  --accent: #1d9a7c; /* เขียวผ้าผ่าตัด */
+  --accent-strong: #137a61;
+  --accent-soft: rgba(29, 154, 124, 0.28);
+  --mint-bg: #e6f4ee;
+  --glass: rgba(255, 255, 255, 0.9);
+  --shadow: 0 12px 32px rgba(18, 49, 58, 0.1);
+  /* ชื่อตัวแปรเดิมที่ CSS ส่วนอื่นใช้อยู่ */
+  --cyan: var(--accent);
+  --cyan-soft: var(--accent-soft);
+  --text: var(--ink);
+  --muted: var(--ink-2);
+  color-scheme: light;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.app3d button {
+  font: inherit;
+  color: inherit;
+}

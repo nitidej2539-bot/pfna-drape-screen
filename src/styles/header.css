@@ -1,0 +1,79 @@
+/* ---------- Header ---------- */
+.ov-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(29, 154, 124, 0.15);
+}
+
+.ov-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ov-logo {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--cyan);
+  border-radius: 8px;
+  color: var(--cyan);
+  font-size: 20px;
+  box-shadow: 0 0 12px var(--cyan-soft);
+}
+
+.ov-nav nav {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.ov-nav nav button {
+  padding: 8px 12px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--muted);
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.ov-nav nav button:hover {
+  color: var(--text);
+}
+
+.ov-nav nav button.is-active {
+  color: var(--text);
+  border-bottom-color: var(--cyan);
+}
+
+.ov-menu {
+  display: none;
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--cyan-soft);
+  border-radius: 10px;
+  background: var(--glass);
+  font-size: 18px;
+  cursor: pointer;
+}

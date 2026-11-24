@@ -1,0 +1,267 @@
+@media (max-width: 1100px) {
+  .ver-grid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+  }
+
+  .hl-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- แท็บเล็ตแนวตั้ง: แผงข้อมูลในห้อง 3D เป็นแผ่นเต็มกว้างด้านล่าง (แบบเดียวกับมือถือ) ---------- */
+@media (max-width: 1100px) and (orientation: portrait) {
+  .ov-install,
+  .ov-materials {
+    left: 16px;
+    right: 16px;
+    top: auto;
+    bottom: 16px;
+    width: auto;
+    max-height: 42svh;
+  }
+
+  .ov-product {
+    top: 84px;
+  }
+}
+
+/* ---------- แท็บเล็ต / มือถือ ---------- */
+@media (max-width: 1100px) {
+  .ov-nav nav {
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    flex-direction: column;
+    min-width: 200px;
+    padding: 8px;
+    border: 1px solid var(--cyan-soft);
+    border-radius: 14px;
+    background: var(--surface);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s, transform 0.25s, visibility 0s 0.25s;
+  }
+
+  .ov-nav nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .ov-nav nav button {
+    text-align: left;
+    border-bottom: 0;
+    border-left: 2px solid transparent;
+  }
+
+  .ov-nav nav button.is-active {
+    border-left-color: var(--cyan);
+  }
+
+  .ov-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 760px) {
+  .ov-nav {
+    padding: 10px 16px;
+  }
+
+  .ov-product {
+    left: 16px;
+    right: 16px;
+    top: 72px;
+  }
+
+  .ov-product p:last-child {
+    display: none;
+  }
+
+  .ov-turns {
+    left: 12px;
+    right: 12px;
+    bottom: 16px;
+  }
+
+  .ov-turns button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .h3d-card {
+    left: 50%;
+    bottom: 16px;
+    translate: -50% 0;
+    white-space: nowrap;
+    padding: 6px 12px 6px 8px;
+    font-size: 13px;
+  }
+
+  .h3d-card small,
+  .h3d-card::before {
+    display: none;
+  }
+
+  .ov-install {
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: 12px;
+    width: auto;
+    max-height: 44svh;
+    padding: 16px;
+  }
+
+  .ov-install li:not(.is-current) p {
+    display: none;
+  }
+
+  .ov-install li {
+    padding: 8px;
+  }
+
+  .ov-materials {
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: 12px;
+    width: auto;
+    max-height: 42svh;
+    padding: 16px;
+  }
+
+  .ov-materials h2 {
+    font-size: 20px;
+  }
+
+  .ov-materials .detail-specs {
+    display: none;
+  }
+
+  .ver-row {
+    grid-template-columns: 84px minmax(0, 1fr) 58px;
+    gap: 8px;
+  }
+
+  .ver-name {
+    font-size: 12px;
+  }
+
+  .ver-val {
+    font-size: 16px;
+  }
+
+  .install-notes {
+    display: none;
+  }
+
+  .ov-results {
+    top: 64px;
+    translate: -50% 0;
+    max-height: calc(100svh - 80px);
+    padding: 18px;
+  }
+
+  .dash-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .dash-card {
+    padding: 14px;
+  }
+
+  .dash-kpi,
+  .dash-wide {
+    grid-column: span 2;
+  }
+
+  .hl-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ver-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .page-section {
+    padding: 80px 16px 24px;
+  }
+
+  .people-stage {
+    height: 400px;
+  }
+
+  .people-slide {
+    gap: 14px;
+    padding: 0 14px;
+  }
+
+  .people-fig {
+    height: 78%;
+  }
+
+  .people-info h3 {
+    font-size: 22px;
+  }
+
+  .people-role {
+    font-size: 15px;
+  }
+
+  .people-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* หน่วยงานบนมือถือ: เรียงลงแนวตั้ง โลโก้ → ป้าย → ชื่อ → ภาพทีม → ภาพบรรยากาศ */
+  .unit-section {
+    margin-top: 80px;
+    padding: 0 16px;
+  }
+
+  .unit-hero {
+    min-height: 0;
+  }
+
+  .unit-hero::after {
+    background: linear-gradient(180deg, rgba(243, 247, 246, 0.96) 0%, rgba(243, 247, 246, 0.88) 55%, rgba(243, 247, 246, 0.3) 100%);
+  }
+
+  .unit-copy {
+    padding: 24px 20px 8px;
+  }
+
+  .unit-logos {
+    width: 200px;
+    margin-bottom: 18px;
+  }
+
+  .unit-copy p:last-child {
+    font-size: 15px;
+  }
+
+  .unit-team {
+    position: relative;
+    right: auto;
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .unit-gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .people-fig,
+  .people-info,
+  .ov {
+    transition: opacity 0.2s;
+  }
+}

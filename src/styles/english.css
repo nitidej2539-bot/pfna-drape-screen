@@ -1,0 +1,15 @@
+/* ---------- ปรับเฉพาะภาษาอังกฤษ (คำยาวกว่าไทย) ---------- */
+[lang='en'] .nowrap {
+  white-space: normal;
+}
+[lang='en'] .unit-meta {
+  max-width: 420px;
+}
+[lang='en'] .contact-section h2 {
+  font-size: clamp(22px, 2vw, 30px);
+}
+@media (max-width: 900px) {
+  [lang='en'] .ov-scroll {
+    white-space: nowrap;
+  }
+}

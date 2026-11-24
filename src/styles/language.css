@@ -1,0 +1,37 @@
+/* ---------- ปุ่มเปลี่ยนภาษา ---------- */
+.ov-lang {
+  display: flex;
+  flex: none;
+  padding: 3px;
+  border: 1px solid var(--cyan-soft);
+  border-radius: 999px;
+  background: #fff;
+}
+.ov-lang button {
+  min-width: 44px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+}
+.ov-lang button.is-active {
+  background: var(--accent);
+  color: #fff;
+}
+@media (max-width: 1100px) {
+  .ov-lang {
+    margin-left: auto;
+  }
+  .ov-menu {
+    margin-left: 0;
+  }
+  .ov-nav {
+    gap: 12px;
+  }
+}
+[lang='en'] .ov-nav nav button {
+  white-space: nowrap;
+}

@@ -1,0 +1,123 @@
+/* ---------- วิดีโอเดินเข้าห้องผ่าตัด (เลื่อนตาม scroll) ---------- */
+.walkin {
+  position: relative;
+  height: 720vh; /* ทางเดิน (ยืด) + เข้าห้อง + โคจรรอบเสาฉาก */
+}
+
+.walkin-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #e9eeed;
+}
+
+.walkin-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* จางเป็นสีพื้นห้อง 3D ตอนท้าย ให้ต่อกับห้องจำลองได้เนียน */
+.walkin-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: #e9eeed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.walkin-next {
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: min(460px, calc(100vw - 32px));
+  padding: 26px 28px;
+  border-radius: 20px;
+  text-align: center;
+  background: var(--surface);
+  border-top: 4px solid var(--accent);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+
+.walkin-next .ov-eyebrow {
+  margin: 0;
+}
+
+.walkin-next strong {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.walkin-next span {
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.walkin-next-arrow {
+  margin-top: 6px;
+  font-size: 22px !important;
+  color: var(--accent) !important;
+  animation: wheel 1.6s ease-in-out infinite;
+}
+
+.walkin-badge {
+  position: absolute;
+  z-index: 6;
+  left: 16px;
+  bottom: 14px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(18, 49, 58, 0.6);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* ข้อความต้อนรับเข้าห้อง 3D */
+.ov-enter3d {
+  left: 50%;
+  top: 96px;
+  translate: -50% 0;
+  max-width: 520px;
+  padding: 16px 22px;
+  border-radius: 16px;
+  text-align: center;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+
+.ov-enter3d p:last-child {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+@media (max-width: 760px) {
+
+  /* ป้ายวิดีโอจำลอง ย้ายขึ้นไปใต้ header ไม่ให้ทับปุ่มเลื่อน/คำบรรยายด้านล่าง */
+  .walkin-badge {
+    top: 72px;
+    bottom: auto;
+    left: 12px;
+    font-size: 11px;
+  }
+
+  .ov-enter3d {
+    left: 12px;
+    right: 12px;
+    translate: none;
+    top: 72px;
+  }
+}

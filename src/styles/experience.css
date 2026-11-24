@@ -1,0 +1,305 @@
+/* ---------- ประสบการณ์ 3D ---------- */
+.experience {
+  position: relative;
+  height: 1500vh;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+/* overlay ทุกบท: ซ่อน/แสดงตามบทปัจจุบัน */
+.ov {
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.5s, transform 0.5s, visibility 0s 0.5s;
+}
+
+.ov.is-on {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.ov-eyebrow {
+  margin: 0 0 8px;
+  color: var(--cyan);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ov-scroll {
+  left: 50%;
+  bottom: 28px;
+  translate: -50% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px 10px;
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--ink-2);
+  pointer-events: none;
+}
+
+.ov-wheel {
+  width: 22px;
+  height: 34px;
+  border: 2px solid var(--cyan);
+  border-radius: 12px;
+  position: relative;
+}
+
+.ov-wheel::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  width: 3px;
+  height: 7px;
+  translate: -50% 0;
+  border-radius: 2px;
+  background: var(--cyan);
+  animation: wheel 1.6s ease-in-out infinite;
+}
+
+@keyframes wheel {
+  50% {
+    transform: translateY(8px);
+    opacity: 0.3;
+  }
+}
+
+.ov-product {
+  left: 48px;
+  top: 96px;
+  max-width: 380px;
+  padding: 20px 24px;
+  border: 1px solid var(--cyan-soft);
+  border-radius: 18px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
+.ov-product h2 {
+  margin: 0 0 8px;
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.ov-product h2 small {
+  display: block;
+  font-size: 0.55em;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.ov-product p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.ov-turns {
+  left: 24px;
+  right: 24px;
+  bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.ov-turns.is-on button {
+  pointer-events: auto;
+}
+
+.ov-turns button,
+.glass-btn {
+  padding: 12px 20px;
+  border: 1px solid var(--cyan-soft);
+  border-radius: 999px;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ov-turns button:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 18px rgba(29, 154, 124, 0.45);
+}
+
+/* กล่องบนตัวผลิตภัณฑ์ */
+.h3d {
+  position: relative;
+  opacity: 0;
+  transform: translateY(14px) scale(0.92);
+  transition: opacity 0.5s, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.h3d.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.h3d-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--cyan), 0 0 14px var(--cyan);
+}
+
+.h3d-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--cyan);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+.h3d-card {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 10px;
+  font-size: 15px;
+  text-align: left;
+  background: var(--glass);
+  border: 1px solid var(--cyan-soft);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(29, 154, 124, 0.35);
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.h3d-card::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  bottom: -18px;
+  width: 26px;
+  height: 1.5px;
+  background: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+  transform-origin: left;
+  transform: rotate(-45deg);
+}
+
+.h3d-card:hover,
+.h3d-card:focus-visible {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 30px rgba(29, 154, 124, 0.75);
+}
+
+/* ป้ายหมายเลขเสา */
+
+/* แผงขั้นตอนติดตั้ง */
+.ov-install {
+  right: 32px;
+  top: 92px;
+  bottom: 32px;
+  width: min(420px, 40vw);
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid var(--cyan-soft);
+  border-radius: 18px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+}
+
+.ov-install ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ov-install li {
+  display: flex;
+  gap: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  opacity: 0.45;
+  transition: opacity 0.3s, background 0.3s, border-color 0.3s;
+}
+
+.ov-install li.is-done {
+  opacity: 0.75;
+}
+
+.ov-install li.is-current {
+  opacity: 1;
+  border-color: var(--cyan-soft);
+  background: rgba(29, 154, 124, 0.08);
+}
+
+.step-n {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cyan);
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.ov-install li.is-current .step-n,
+.ov-install li.is-done .step-n {
+  background: var(--cyan);
+  color: #fff;
+}
+
+.ov-install strong {
+  display: block;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.ov-install li p {
+  margin: 4px 0 0;
+  color: var(--ink-2);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ข้อความแทนห้อง 3D เมื่ออุปกรณ์ไม่รองรับ WebGL */
+.room-fallback {
+  position: absolute;
+  inset: 45% 24px auto;
+  text-align: center;
+}

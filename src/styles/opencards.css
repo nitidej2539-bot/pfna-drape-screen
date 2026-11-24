@@ -1,0 +1,159 @@
+/* ---------- 3 ป้ายเปิด (ขนาดและตัวอักษรชุดเดียวกัน) ---------- */
+.opencard {
+  --title: clamp(28px, 2.6vw, 52px);
+  position: absolute;
+  z-index: 3;
+  left: 48px;
+  top: 52%;
+  translate: 0 -50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: clamp(400px, 34vw, 680px);
+  min-height: clamp(310px, 24.2vw, 484px);
+  padding: clamp(20px, 1.8vw, 36px) clamp(24px, 2vw, 40px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-left: 6px solid var(--accent);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.5));
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: 0 14px 40px rgba(16, 50, 60, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+.opencard.is-open {
+  text-align: center;
+}
+.opencard.is-right {
+  left: auto;
+  right: 48px;
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-right: 6px solid var(--accent);
+}
+.opencard p {
+  margin: 0;
+}
+.opencard h1,
+.opencard h2 {
+  margin: 0;
+  font-size: var(--title);
+  font-weight: 700;
+  line-height: 1.22;
+  color: var(--ink);
+  white-space: pre-line;
+}
+.opencard small {
+  display: block;
+  font-size: 0.56em;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.opencard .ov-eyebrow {
+  margin-bottom: 6px;
+}
+.opencard-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--title) * 0.6);
+  margin: 0 0 10px;
+}
+.opencard-logos img {
+  width: auto;
+  height: calc(var(--title) * 3.3);
+}
+.opencard .opencard-present {
+  margin-top: 4px;
+  font-size: calc(var(--title) * 1.35);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--accent);
+}
+.opencard-en {
+  color: var(--accent);
+  font-size: calc(var(--title) * 0.48);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+.opencard .opencard-text {
+  margin-top: 12px;
+  font-size: calc(var(--title) * 0.46);
+  line-height: 1.5;
+  color: #2c4450;
+}
+.opencard-3s {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--title) * 0.6);
+  margin-top: 12px;
+}
+.opencard-3s img {
+  flex: none;
+  width: calc(var(--title) * 5);
+  height: auto;
+}
+.opencard-3s ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.opencard-3s li {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 22px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.2;
+  font-size: calc(var(--title) * 0.4);
+  font-weight: 600;
+  color: #fff;
+  background: #b5121b;
+}
+.opencard-3s li b {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+[lang='en'] .opencard-3s li {
+  font-size: calc(var(--title) * 0.56);
+}
+.opencard-3s li:nth-child(2) {
+  background: #5d6a78;
+}
+.opencard-3s li:nth-child(3) {
+  color: #3d2a00;
+  background: #e9b330;
+}
+[lang='en'] .opencard {
+  --title: clamp(24px, 2.2vw, 44px);
+}
+@media (max-width: 900px) {
+  .opencard,
+  .opencard.is-right {
+    --title: clamp(22px, 6.6vw, 40px);
+    left: 16px;
+    right: 16px;
+    top: auto;
+    bottom: 120px;
+    translate: none;
+    width: auto;
+    min-height: 260px;
+    padding: 16px 20px;
+  }
+  [lang='en'] .opencard,
+  [lang='en'] .opencard.is-right {
+    --title: clamp(20px, 5.8vw, 36px);
+  }
+  .opencard .opencard-text {
+    font-size: 16px;
+  }
+  .opencard .ov-eyebrow {
+    font-size: 11px;
+  }
+}
